@@ -72,3 +72,7 @@ QTabBar::close-button {
 }
 
 /* ---- Tab View End ---- */
+
+QLineEdit {
+    padding: 2px;
+}
