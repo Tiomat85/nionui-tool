@@ -7,6 +7,7 @@
 int main(int argv, char **args)
 {
     Application app(argv, args);
+    app.setStyle("windowsvista");    
 
     if (app.initialize())
         return app.exec();
