@@ -40,7 +40,6 @@ release
 *.sdf
 *.opensdf
 *.suo
-.vs/
 
 # Linux
 moc_*

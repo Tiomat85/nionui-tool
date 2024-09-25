@@ -3369,7 +3369,6 @@ QWidget *Widget_makeIntrinsicWidget(const QString &intrinsic_id)
     else if (intrinsic_id == "lineedit")
     {
         PyLineEdit *line_edit = new PyLineEdit();
-        ApplyStylesheet(line_edit);
         return line_edit;
     }
     else if (intrinsic_id == "textbrowser")
