@@ -33,7 +33,6 @@ class BinaryDistribution(setuptools.Distribution):
 from distutils.util import get_platform
 from wheel.bdist_wheel import bdist_wheel as bdist_wheel_
 from packaging import tags
-from wheel.bdist_wheel import get_platform
 
 
 
@@ -76,7 +75,7 @@ class bdist_wheel(bdist_wheel_):
             if self.plat_name and not self.plat_name.startswith("macosx"):
                 plat_name = self.plat_name
             else:
-                plat_name = get_platform(self.bdist_dir)
+                plat_name = next(tags.sys_tags()).platform # get_platform(self.bdist_dir)
 
             if plat_name in ('linux-x86_64', 'linux_x86_64') and sys.maxsize == 2147483647:
                 plat_name = 'linux_i686'
