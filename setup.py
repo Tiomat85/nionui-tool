@@ -33,7 +33,8 @@ class BinaryDistribution(setuptools.Distribution):
 from distutils.util import get_platform
 from wheel.bdist_wheel import bdist_wheel as bdist_wheel_
 from packaging import tags
-from wheel.bdist_wheel import get_abi_tag, get_platform
+from wheel.bdist_wheel import get_platform
+
 
 
 # the bdist_wheel tools are awful and undocumented
@@ -97,7 +98,7 @@ class bdist_wheel(bdist_wheel_):
                 impl = self.py_limited_api
                 abi_tag = 'abi3'
             else:
-                abi_tag = str(get_abi_tag()).lower()
+                abi_tab = str(next(tags.sys_tags()).abi).lower() # abi_tag = str(get_abi_tag()).lower()
             abi_tag = self.abi_tag
             tag = (impl, abi_tag, plat_name)
             supported_tags = [(t.interpreter, t.abi, t.platform) for t in tags.sys_tags()]
